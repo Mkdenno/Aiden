@@ -1,5 +1,6 @@
 package com.example.aiden.presentation
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
@@ -16,6 +17,10 @@ class HomeViewModel(
 
     private val _state= MutableStateFlow(HomeState())
     val state=_state.asStateFlow()
+
+    init {
+        getBibleVerse("verse")
+    }
 
 
     fun getBibleVerse(verse: String)=viewModelScope.launch {
@@ -37,9 +42,12 @@ class HomeViewModel(
 
                 }
                 is Resource.Success->{
+
+                    Log.i("Response", result.data.toString())
                     _state.value=HomeState(
                         isLoading = false,
                         data = result.data
+
                     )
                 }
             }

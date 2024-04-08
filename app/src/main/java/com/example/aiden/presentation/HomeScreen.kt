@@ -3,7 +3,14 @@ package com.example.aiden.presentation
 import android.widget.Toast
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
+<<<<<<< HEAD
 import androidx.compose.foundation.layout.FlowRowScopeInstance.align
+=======
+<<<<<<< HEAD
+import androidx.compose.foundation.layout.FlowRowScopeInstance.align
+=======
+>>>>>>> 9b853ed (adds api)
+>>>>>>> e9a68e0 (adds api)
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -30,11 +37,23 @@ import coil.compose.AsyncImage
 import com.example.aiden.models.AidenResponse
 
 @Composable
+<<<<<<< HEAD
 fun homeScreen(
+=======
+<<<<<<< HEAD
+fun homeScreen(
+=======
+fun HomeScreen(
+>>>>>>> 9b853ed (adds api)
+>>>>>>> e9a68e0 (adds api)
     viewModel: HomeViewModel
 ) {
 
     val state by viewModel.state.collectAsState()
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> e9a68e0 (adds api)
     val context= LocalContext.current
 
     if (state.isLoading){
@@ -42,6 +61,18 @@ fun homeScreen(
         CircularProgressIndicator()
     }
     if (state.errorMessage.isNotEmpty()){
+<<<<<<< HEAD
+=======
+=======
+    val context = LocalContext.current
+
+    if (state.isLoading) {
+
+        CircularProgressIndicator()
+    }
+    if (state.errorMessage.isNotEmpty()) {
+>>>>>>> 9b853ed (adds api)
+>>>>>>> e9a68e0 (adds api)
         Toast.makeText(
             context,
             "",
@@ -49,6 +80,10 @@ fun homeScreen(
         ).show()
 
     }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> e9a68e0 (adds api)
     
     Box(
         modifier = Modifier.fillMaxWidth()
@@ -65,6 +100,30 @@ fun getBibleITem(
     aidenResponse: AidenResponse
 ) {
     Box (
+<<<<<<< HEAD
+=======
+=======
+
+    Box(
+        modifier = Modifier.fillMaxWidth()
+
+    ) {
+        state.data?.let {
+            BibleITem(aidenResponse = it)
+        }
+
+
+    }
+
+}
+
+@Composable
+fun BibleITem(
+    aidenResponse: AidenResponse
+) {
+    Box(
+>>>>>>> 9b853ed (adds api)
+>>>>>>> e9a68e0 (adds api)
         modifier = Modifier
             .size(200.dp)
             .background(
@@ -72,7 +131,15 @@ fun getBibleITem(
                 color = MaterialTheme.colorScheme.background
             )
 
+<<<<<<< HEAD
     ){
+=======
+<<<<<<< HEAD
+    ){
+=======
+    ) {
+>>>>>>> 9b853ed (adds api)
+>>>>>>> e9a68e0 (adds api)
         Box(
             modifier = Modifier
                 .fillMaxWidth()
@@ -90,15 +157,36 @@ fun getBibleITem(
             contentAlignment = Alignment.Center
 
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> e9a68e0 (adds api)
         ){
             Text(text =aidenResponse.text )
             Text(text =aidenResponse.translation_id )
             Text(text =aidenResponse.translation_name )
             Text(text =aidenResponse.translation_note )
+<<<<<<< HEAD
+=======
+=======
+        ) {
+            Text(text = aidenResponse.text)
+            Text(text = aidenResponse.translation_id)
+            Text(text = aidenResponse.translation_name)
+            Text(text = aidenResponse.translation_note)
+>>>>>>> 9b853ed (adds api)
+>>>>>>> e9a68e0 (adds api)
         }
 
     }
 
 
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+
+=======
+>>>>>>> 9b853ed (adds api)
+>>>>>>> e9a68e0 (adds api)
 }
